@@ -11,9 +11,6 @@
 
 enum Type {
     RECTANGLE,
-    PLAYER,
-    TEXT,
-    CIRCLE,
 };
 
 class IObject {
