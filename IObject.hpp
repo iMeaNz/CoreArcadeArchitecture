@@ -8,25 +8,87 @@
 #pragma once
 
 #include "IDisplayModule.hpp"
-
+/**
+ * @brief Enum storing all of our objects types (even if in my honest opinion,
+ * you can do basically everything using only rectangles)
+ *
+ */
 enum Type {
     RECTANGLE,
 };
 
+/**
+ * @brief This interface is extremely important, it will hold all of the necessary
+ * informations of our objects used when drawing them. If you wish to add a new
+ * object, make sure to notify others members, so we can update our enums
+ */
 class IObject {
     public:
-        virtual void draw() const = 0;
+        /**
+         * @brief Get the Type object
+         *
+         * @return Type
+         */
         virtual Type getType() const = 0;
-
+        /**
+         * @brief Set the Pos object
+         *
+         * @param pos
+         */
         virtual void setPos(IDisplayModule::Vector2i pos) = 0;
+        /**
+         * @brief Get the Pos object
+         *
+         * @return IDisplayModule::Vector2i
+         */
         virtual IDisplayModule::Vector2i getPos() const = 0;
+        /**
+         * @brief Set the Size object
+         *
+         * @param size
+         */
         virtual void setSize(IDisplayModule::Vector2i size) = 0;
+        /**
+         * @brief Get the Size object
+         *
+         * @return IDisplayModule::Vector2i
+         */
         virtual IDisplayModule::Vector2i getSize() const = 0;
+        /**
+         * @brief Set the Texture object
+         *
+         * @param path
+         */
         virtual void setTexture(std::string path) = 0;
+        /**
+         * @brief Get the Texture object
+         *
+         * @return std::string
+         */
         virtual std::string getTexture() const = 0;
+        /**
+         * @brief Set the Character object
+         *
+         * @param c
+         */
         virtual void setCharacter(char c) = 0;
+        /**
+         * @brief Get the Character object
+         *
+         * @return char
+         */
         virtual char getCharacter() const = 0;
+        /**
+         * @brief Set the Color object
+         *
+         * @param color
+         */
         virtual void setColor(IDisplayModule::Color color) = 0;
+        /**
+         * @brief Get the Color object
+         *
+         * @return IDisplayModule::Color
+         */
         virtual IDisplayModule::Color getColor() const = 0;
 };
 

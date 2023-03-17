@@ -11,15 +11,22 @@
 #include <memory>
 #include "IObject.hpp"
 
+/**
+ * @brief Interface handling all the drawing
+ * All of our graphic classes must implement this interface
+ */
 class IDisplayModule {
     public:
         virtual ~IDisplayModule() = default;
-
+        //Struct used to handle positions
         struct Vector2i {
             int x;
             int y;
         };
-
+        /**
+         * @brief This function will be called when starting the program or
+         * when switching to another graphic library
+         */
         virtual void init(Vector2i windowSize) = 0;
 
         enum Color {
@@ -34,22 +41,31 @@ class IDisplayModule {
         };
 
         enum Button {
-            LEFT,
-            UP,
-            RIGHT,
-            DOWN,
-            KEY_Q,
-            KEY_E,
-            ESC,
-            F1,
-            F2,
-            F3,
-            F4,
-            F5,
-            F6,
-            F7
+            LEFT, //Q
+            UP, //Z
+            RIGHT, //D
+            DOWN, //S
+            KEY_F, //F
+            KEY_E, //E
+            ESC, //Escape
+            F1, //Previous graphic library
+            F2, //Next graphic library
+            F3, //Previous Game
+            F4, //Next game
+            F5, //Restart
+            F6, //Menu
+            F7 //Exit
         };
+
+        /**
+         * @brief Checks if a certain button has been pressed
+         *
+         * @param button
+         * @return true
+         * @return false
+         */
         virtual bool isButtonPressed(Button button) const = 0;
+        //Struct handling mouse button events
         struct MouseButtonEvent {
             enum MouseButton {
                 NONE,
@@ -63,14 +79,46 @@ class IDisplayModule {
             };
             Vector2i pos;
         };
+        /**
+         * @brief Get the Mouse Pos object
+         *
+         * @return Vector2i
+         */
         virtual Vector2i getMousePos() const = 0;
+        /**
+         * @brief Get the Mouse Button Event object
+         *
+         * @return MouseButtonEvent
+         */
         virtual MouseButtonEvent getMouseButtonEvent() = 0;
 
-        virtual void close() = 0;
+        /**
+         * @brief Returns true if the client wish to close the game
+         *
+         * @return true
+         * @return false
+         */
+        virtual bool close() = 0;
 
+        /**
+         * @brief Main display function, it will take an IObject and draw it onto the screen
+         * based on his type
+         * @param obj
+         */
         virtual void render(IObject *obj) = 0;
+        /**
+         * @brief Clears the window
+         *
+         * @param color
+         */
         virtual void clear(Color color) = 0;
+        /**
+         * @brief This will be the function where you will be using the pollEvent function for example
+         *
+         */
         virtual void handleEvents() = 0;
 };
 
-extern "C" std::unique_ptr<IDisplayModule> entryPoint();
+//You have to implement in each lib a C entryPoint() function or anything similar that returns
+//an instance of your class. So that your Loader can load the .so file generated.
+//extern "C" std::unique_ptr<IDisplayModule> entryPoint();
