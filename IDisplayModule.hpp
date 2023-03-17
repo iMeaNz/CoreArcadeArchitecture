@@ -9,7 +9,7 @@
 
 #include <iostream>
 #include <memory>
-#include "../Objects/IObject.hpp"
+#include "IObject.hpp"
 
 class IDisplayModule {
     public:

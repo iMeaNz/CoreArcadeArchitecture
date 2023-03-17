@@ -7,7 +7,7 @@
 
 #pragma once
 
-#include "../DisplayModules/IDisplayModule.hpp"
+#include "IDisplayModule.hpp"
 
 class IGameModule {
     public:

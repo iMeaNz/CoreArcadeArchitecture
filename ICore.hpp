@@ -8,8 +8,8 @@
 #pragma once
 
 #include <iostream>
-#include "../DisplayModules/IDisplayModule.hpp"
-#include "../GameModules/IGameModule.hpp"
+#include "IDisplayModule.hpp"
+#include "IGameModule.hpp"
 
 class ICore {
     public:
