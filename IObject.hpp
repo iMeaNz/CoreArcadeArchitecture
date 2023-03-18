@@ -91,4 +91,23 @@ class IObject {
          */
         virtual IDisplayModule::Color getColor() const = 0;
 };
+/**
+ * @brief Example of abstract class, I thought about those because it will make
+ * the collaboration between our groups better. This way, we all know what is
+ * contained in a new object.
+ *
+ */
+class ARectangle : public IObject {
+    protected:
+        Type _id;
+
+        IDisplayModule::Vector2i _pos;
+        IDisplayModule::Vector2i _size;
+        std::string _pathToTexture;
+        //For example here, _borderThickness is not common amongst all
+        //the IObject
+        int _borderThickness;
+        IDisplayModule::Color _color;
+        char _character;
+};
 
