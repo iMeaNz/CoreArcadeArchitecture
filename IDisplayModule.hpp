@@ -77,6 +77,8 @@ class IDisplayModule {
                 PRESSED,
                 RELEASED
             };
+            MouseEventType type;
+            MouseButton button;
             Vector2i pos;
         };
         /**
@@ -105,7 +107,12 @@ class IDisplayModule {
          * based on his type
          * @param obj
          */
-        virtual void render(IObject *obj) = 0;
+        virtual void drawObj(IObject *obj) = 0;
+        /**
+         * @brief Display all the objects drawn beforehand to the screen
+         *
+         */
+        virtual void render() = 0;
         /**
          * @brief Clears the window
          *
@@ -121,4 +128,4 @@ class IDisplayModule {
 
 //You have to implement in each lib a C entryPoint() function or anything similar that returns
 //an instance of your class. So that your Loader can load the .so file generated.
-//extern "C" std::unique_ptr<IDisplayModule> entryPoint();
+//extern "C" std::unique_ptr<IDisplayModule> entryPointDisplay();

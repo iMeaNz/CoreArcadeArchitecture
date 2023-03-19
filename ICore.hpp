@@ -29,6 +29,18 @@ class ICore {
          */
         virtual void setFramerate(int framerate) = 0;
         /**
+         * @brief Get the Framerate object
+         *
+         * @return int
+         */
+        virtual int getFramerate() const = 0;
+        /**
+         * @brief Set the Score object
+         *
+         * @param score
+         */
+        virtual void setScore(int score) = 0;
+        /**
          * @brief This function will be called when a game is finished or the used exit a game
          * It could probably be smart to implement an observer here but i'm lazy
          * @param score
@@ -45,7 +57,7 @@ class ICore {
          *
          * @param name
          */
-        virtual void setPlayer(std::string name) = 0;
+        virtual void setPlayerName(std::string name) = 0;
         /**
          * @brief Set the Display Module object
          *

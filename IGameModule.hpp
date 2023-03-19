@@ -25,8 +25,8 @@ class IGameModule {
          *
          * @param display
          */
-        virtual void update(IDisplayModule *display) = 0;
+        virtual void update(std::unique_ptr<IDisplayModule> &display) = 0;
 };
 
 //Check IDisplayModule for documentation
-//extern "C" std::unique_ptr<IGameModule> entryPoint();
+//extern "C" std::unique_ptr<IGameModule> entryPointGame();
