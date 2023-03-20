@@ -118,7 +118,7 @@ class IDisplayModule {
          *
          * @param color
          */
-        virtual void clear(Color color) = 0;
+        virtual void clearWindow(Color color) = 0;
         /**
          * @brief This will be the function where you will be using the pollEvent function for example
          *
