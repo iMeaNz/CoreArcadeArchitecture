@@ -9,7 +9,8 @@
 
 #include <iostream>
 #include <memory>
-#include "IObject.hpp"
+
+class IObject;
 
 /**
  * @brief Interface handling all the drawing
@@ -67,12 +68,12 @@ class IDisplayModule {
         virtual bool isButtonPressed(Button button) const = 0;
         //Struct handling mouse button events
         struct MouseButtonEvent {
-            enum MouseButton {
+            enum class MouseButton {
                 NONE,
                 LEFT,
                 RIGHT
             };
-            enum MouseEventType {
+            enum class MouseEventType {
                 NONE,
                 PRESSED,
                 RELEASED
