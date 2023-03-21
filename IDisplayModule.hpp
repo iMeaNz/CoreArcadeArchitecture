@@ -108,7 +108,7 @@ class IDisplayModule {
          * based on his type
          * @param obj
          */
-        virtual void drawObj(IObject *obj) = 0;
+        virtual void drawObj(std::shared_ptr<IObject> obj) = 0;
         /**
          * @brief Display all the objects drawn beforehand to the screen
          *
