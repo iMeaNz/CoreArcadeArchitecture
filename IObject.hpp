@@ -79,6 +79,18 @@ class IObject {
          */
         virtual char getCharacter() const = 0;
         /**
+         * @brief Set the Character Color object
+         *
+         * @param color
+         */
+        virtual void setCharacterColor(IDisplayModule::Color color) = 0;
+        /**
+         * @brief Get the Character Color object
+         *
+         * @return IDisplayModule::Color
+         */
+        virtual IDisplayModule::Color getCharacterColor() const = 0;
+        /**
          * @brief Set the Color object
          *
          * @param color
@@ -108,6 +120,7 @@ class ARectangle : public IObject {
         //the IObject
         int _borderThickness;
         IDisplayModule::Color _color;
+        IDisplayModule::Color _characterColor;
         char _character;
 };
 
