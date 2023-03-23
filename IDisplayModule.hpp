@@ -129,4 +129,4 @@ class IDisplayModule {
 
 //You have to implement in each lib a C entryPoint() function or anything similar that returns
 //an instance of your class. So that your Loader can load the .so file generated.
-//extern "C" std::unique_ptr<IDisplayModule> entryPointDisplay();
+//extern "C" IDisplayModule *entryPoint();

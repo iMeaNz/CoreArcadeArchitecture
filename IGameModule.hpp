@@ -14,6 +14,7 @@
  */
 class IGameModule {
     public:
+        virtual ~IGameModule() = default;
         /**
          * @brief This function will be called when starting the program or
          * when switching to another graphic library. It will fill all the necessary
@@ -25,8 +26,13 @@ class IGameModule {
          *
          * @param display
          */
-        virtual void update(std::unique_ptr<IDisplayModule> &display) = 0;
+        virtual void update(IDisplayModule *display) = 0;
+        /**
+         * @brief This function will be called when closing the game/switching
+         * games. It should destroy the object itself to avoid memory leaks
+         */
+        virtual void stop() = 0;
 };
 
 //Check IDisplayModule for documentation
-//extern "C" std::unique_ptr<IGameModule> entryPointGame();
+//extern "C" IGameModule *entryPoint();
