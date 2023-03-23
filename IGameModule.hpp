@@ -8,31 +8,39 @@
 #pragma once
 
 #include "IDisplayModule.hpp"
+
 /**
- * @brief Interface handling all the stuff about our games
- * All of our games must implement this interface
+ * @brief This is the namespace that will contain all of your games
  */
-class IGameModule {
-    public:
-        virtual ~IGameModule() = default;
-        /**
-         * @brief This function will be called when starting the program or
-         * when switching to another graphic library. It will fill all the necessary
-         * objects of the game.
-         */
-        virtual void init() = 0;
-        /**
-         * @brief This function will handle all the objects based on certain events
-         *
-         * @param display
-         */
-        virtual void update(IDisplayModule *display) = 0;
-        /**
-         * @brief This function will be called when closing the game/switching
-         * games. It should destroy the object itself to avoid memory leaks
-         */
-        virtual void stop() = 0;
-};
+namespace game {
+    /**
+     * @brief Interface handling all the stuff about our games
+     * All of our games must implement this interface
+     */
+    class IGameModule {
+        public:
+            virtual ~IGameModule() = default;
+
+
+            /**
+             * @brief This function will be called when starting the program or
+             * when switching to another graphic library. It will fill all the necessary
+             * objects of the game.
+             */
+            virtual void init() = 0;
+            /**
+             * @brief This function will handle all the objects based on certain events
+             *
+             * @param display
+             */
+            virtual void update(display::IDisplayModule *display) = 0;
+            /**
+             * @brief This function will be called when closing the game/switching
+             * games. It should destroy the object itself to avoid memory leaks
+             */
+            virtual void stop() = 0;
+    };
+}
 
 //Check IDisplayModule for documentation
 //extern "C" IGameModule *entryPoint();
