@@ -62,6 +62,8 @@ namespace display {
              * when switching to another graphic library
              */
             virtual void init(Vector2i windowSize) = 0;
+
+            virtual bool isOpen() = 0;
             /**
              * @brief This function will handle the closing of the display
              * library (closing the window in SFML for example)
