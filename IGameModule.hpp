@@ -43,4 +43,4 @@ namespace game {
 }
 
 //Check IDisplayModule for documentation
-//extern "C" IGameModule *entryPoint();
+//extern "C" IGameModule *entryPointGame();
