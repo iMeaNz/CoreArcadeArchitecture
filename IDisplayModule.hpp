@@ -20,7 +20,16 @@ namespace display {
     struct Vector2i {
         int x;
         int y;
+        Vector2i& operator=(const Vector2i& other) {
+            x = other.x;
+            y = other.y;
+            return *this;
+        }
+        bool operator==(const Vector2i &other) const {
+            return (x == other.x && y == other.y);
+        }
     };
+
     enum Color {
         BLACK,
         RED,
@@ -78,7 +87,7 @@ namespace display {
              * @return true
              * @return false
              */
-            virtual bool isButtonPressed(Button button) const = 0;
+            virtual bool isButtonPressed(Button button) = 0;
 
 
             /**
@@ -109,4 +118,4 @@ namespace display {
 
 //You have to implement in each lib a C entryPoint() function or anything similar that returns
 //an instance of your class. So that your Loader can load the .so file generated.
-//extern "C" IDisplayModule *entryPoint();
+//extern "C" IDisplayModule *entryPointDisplay();
