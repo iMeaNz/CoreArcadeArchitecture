@@ -125,7 +125,7 @@ namespace object {
      * contained in a new object.
      *
      */
-    class ARectangle : public IObject {
+    class Rectangle : public IObject {
         protected:
             Type _id;
 
