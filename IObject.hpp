@@ -106,6 +106,18 @@ namespace object {
              * @return display::Color
              */
             virtual display::Color getColor() const = 0;
+            /**
+             * @brief Set the Text object
+             *
+             * @param text
+             */
+            virtual void setText(char text) = 0;
+            /**
+             * @brief Get the Text object
+             *
+             * @return char
+             */
+            virtual char getText() const = 0;
     };
     /**
      * @brief Example of abstract class, I thought about those because it will make
@@ -126,6 +138,7 @@ namespace object {
             display::Color _color;
             display::Color _characterColor;
             char _character;
+            char _text;
     };
 
 }
