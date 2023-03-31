@@ -52,7 +52,7 @@ namespace arcade {
              * It could probably be smart to implement an observer here but i'm lazy
              * @param score
              */
-            virtual void addScore(int score) = 0;
+            virtual int getScore() const = 0;
             /**
              * @brief Get the Player Name object
              *
