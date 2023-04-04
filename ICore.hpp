@@ -72,12 +72,12 @@ namespace arcade {
              *
              * @param display
              */
-            virtual void setDisplayModule(display::IDisplayModule *display) = 0;
+            virtual void setDisplayModule(std::unique_ptr<display::IDisplayModule> display) = 0;
             /**
              * @brief Set the Game Module object
              *
              * @param game
              */
-            virtual void setGameModule(game::IGameModule *game) = 0;
+            virtual void setGameModule(std::unique_ptr<game::IGameModule> game) = 0;
     };
 }
