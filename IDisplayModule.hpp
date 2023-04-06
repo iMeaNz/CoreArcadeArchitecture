@@ -20,11 +20,7 @@ namespace display {
     struct Vector2i {
         int x;
         int y;
-        Vector2i& operator=(const Vector2i& other) {
-            x = other.x;
-            y = other.y;
-            return *this;
-        }
+        Vector2i& operator=(const Vector2i& other) = default;
         bool operator==(const Vector2i &other) const {
             return (x == other.x && y == other.y);
         }
@@ -48,6 +44,7 @@ namespace display {
         DOWN, //S
         KEY_F, //F
         KEY_E, //E
+        SPACE, //Space
         ESC, //Escape
         F1, //Previous graphic library
         F2, //Next graphic library
