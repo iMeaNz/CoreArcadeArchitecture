@@ -39,6 +39,7 @@ namespace game {
             /**
              * @brief This function will be called when closing the game/switching
              * games. It should destroy the object itself to avoid memory leaks
+             * This is also where you will set the score and stuff like that
              */
             virtual void stop(arcade::ICore *core) = 0;
     };

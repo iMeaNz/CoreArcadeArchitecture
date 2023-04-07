@@ -17,8 +17,7 @@
 namespace arcade {
     /**
      * @brief Main interface for our core class
-     * This interface is only here to give an example of the implementation
-     * You don't have to use this one precisely.
+     * You have to implement this interface in order for the arcade to work.
      */
     class ICore {
         public:
