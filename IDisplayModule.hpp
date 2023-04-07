@@ -86,6 +86,25 @@ namespace display {
              */
             virtual bool isButtonPressed(Button button) = 0;
 
+            /**
+             * @brief This function should be called before calling getTextInput
+             * It switches the event handler to another state where it will catch
+             * all the inputs from the user
+             */
+            virtual void startTextInput() = 0;
+            /**
+             * @brief This function should not be called before calling startTextInput
+             * This function returns the text read from the user during the current
+             * frame as a string
+             * The enter keyspace will be return as a '\n' character
+             * @return std::string
+             */
+            virtual std::string getTextInput() = 0;
+            /**
+             * @brief This function should not be called before calling startTextInput
+             * This function stop the handler state initiated by the startTextInput function
+             */
+            virtual void endTextInput() = 0;
 
             /**
              * @brief Main display function, it will take an IObject and draw it onto the screen
