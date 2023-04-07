@@ -9,6 +9,8 @@
 
 #include "IDisplayModule.hpp"
 
+namespace arcade { class ICore; }
+
 /**
  * @brief This is the namespace that will contain all of your games
  */
@@ -38,7 +40,7 @@ namespace game {
              * @brief This function will be called when closing the game/switching
              * games. It should destroy the object itself to avoid memory leaks
              */
-            virtual void stop() = 0;
+            virtual void stop(arcade::ICore *core) = 0;
     };
 }
 
